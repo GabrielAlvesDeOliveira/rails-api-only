@@ -12,7 +12,9 @@ module V1
       # paginate json: @contacts#, methods: :birthdate_br
       
       #expires_in 30.seconds, public: true
-      render json: @contacts#, methods: :birthdate_br
+      if stale?(last_modified: @contacts[0].updated_at)
+        render json: @contacts#, methods: :birthdate_br
+      end
     end
 
     # GET /contacts/1
