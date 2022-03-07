@@ -10,6 +10,8 @@ module V1
       @contacts = Contact.all.page(page_number).per(per_page) #.per(params[:page][:size])
       # @contacts = Contact.all.page(params[:page] ? params[:page][:number] : 1) #.per(params[:page][:size])
       # paginate json: @contacts#, methods: :birthdate_br
+      
+      #expires_in 30.seconds, public: true
       render json: @contacts#, methods: :birthdate_br
     end
 
