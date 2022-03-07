@@ -1,5 +1,8 @@
 class Contact < ApplicationRecord
 
+    valites_presence_of :kind
+    valites_presence_of :address
+
     paginates_per 5
 
     belongs_to :kind #, optional: true
