@@ -3,11 +3,6 @@ class ContactsController < ApplicationController
 
   # GET /contacts
   def index
-    if params[:version] == '1'
-      @contacts = Contact.all
-    elseif params[:version] == '2'
-      @contacts = Contact.last(5)
-    end
 
     render json: @contacts#, methods: :birthdate_br
   end
